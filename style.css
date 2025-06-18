@@ -1,0 +1,175 @@
+:root {
+    --primary-bg: #ffffff; /* Putih bersih */
+    --secondary-bg: #f8f9fa; /* Abu-abu sangat terang, untuk card atau elemen sekunder */
+    --text-color: #343a40; /* Abu-abu gelap, untuk teks utama */
+    --accent-color: #007bff; /* Biru terang, warna aksen utama (contoh: untuk heading, tombol) */
+    --border-color: #dee2e6; /* Border abu-abu terang */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Warna shadow lebih terang */
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+/* Custom classes for text colors */
+/* text-muted-custom diubah agar sesuai dengan warna muted standar Bootstrap */
+.text-muted-custom {
+    color: #6c757d !important;
+}
+
+/* Navbar (as an example, assuming menu.php integrates with this) */
+.navbar {
+    background-color: var(--secondary-bg) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color); /* Tambahkan shadow ringan pada navbar */
+}
+
+.navbar .nav-link {
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar-brand {
+    color: var(--accent-color) !important;
+    font-weight: 700;
+}
+
+/* Section headings */
+.section-heading {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center; /* Pastikan di tengah */
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.section-description {
+    color: var(--text-color); /* Teks standar */
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Card styling */
+.card {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 20px var(--shadow-color); /* Shadow lebih ringan */
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--primary-bg); /* Latar belakang card putih */
+    color: var(--text-color);
+}
+
+.card.bg-secondary-custom {
+    background-color: var(--secondary-bg) !important; /* Untuk card yang ingin sedikit abu-abu terang */
+}
+
+.card-header.bg-accent-custom {
+    background-color: var(--accent-color) !important;
+    color: #ffffff !important; /* Teks putih di atas warna aksen biru */
+    font-weight: bold;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+/* Table styling */
+.table.product-table {
+    /* Atur variabel Bootstrap untuk tabel terang */
+    --bs-table-bg: var(--primary-bg);
+    --bs-table-color: var(--text-color);
+    --bs-table-border-color: var(--border-color);
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.table.product-table th,
+.table.product-table td {
+    border-color: var(--border-color) !important;
+    padding: 1rem;
+}
+
+.table-header-custom {
+    background-color: var(--accent-color) !important;
+    color: #ffffff !important; /* Teks putih di header tabel */
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.table-footer-custom {
+    background-color: var(--secondary-bg) !important; /* Footer tabel sedikit abu-abu terang */
+    color: var(--accent-color);
+    font-weight: bold;
+    border-top: 2px solid var(--accent-color);
+}
+
+/* Form control styling */
+.form-control,
+.form-select {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--accent-color), 0.25);
+}
+
+.form-control::placeholder {
+    color: #adb5bd; /* Placeholder abu-abu standar */
+}
+
+.form-select option {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+/* Button styling */
+.btn-warning { /* Menggunakan btn-warning sebagai basis, tapi disesuaikan warnanya */
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #ffffff; /* Teks putih di tombol aksen */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #0056b3; /* Sedikit lebih gelap dari accent-color saat hover */
+    border-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 2rem;
+    }
+    .section-description {
+        font-size: 1rem;
+    }
+}
